@@ -29,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluir_id'])) {
     }
 }
 
+$mensagem = $_SESSION['mensagem'] ?? '';
+unset($_SESSION['mensagem']);
+
 $resultado = $conexao->query('SELECT * FROM trens ORDER BY prefixo_trem');
 
 ?>
